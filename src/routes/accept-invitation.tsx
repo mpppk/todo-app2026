@@ -57,7 +57,7 @@ function AcceptInvitationPage() {
 	const { mutate: handleAccept, isPending: accepting } = useMutation({
 		mutationFn: () => acceptInvitation({ data: { invitationId } }),
 		onSuccess: () => {
-			router.navigate({
+			void router.navigate({
 				to: "/org/$orgId",
 				params: { orgId: invitation.organizationId },
 			});
@@ -72,7 +72,7 @@ function AcceptInvitationPage() {
 	const { mutate: handleReject, isPending: rejecting } = useMutation({
 		mutationFn: () => rejectInvitation({ data: { invitationId } }),
 		onSuccess: () => {
-			router.navigate({ to: "/orgs" });
+			void router.navigate({ to: "/orgs" });
 		},
 		onError: (err) => {
 			setError(

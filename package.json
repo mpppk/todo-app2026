@@ -6,18 +6,18 @@
 		"#/*": "./src/*"
 	},
 	"scripts": {
-		"dev": "vite dev --port 3000",
-		"build": "vite build",
-		"preview": "bun run build && vite preview",
-		"test": "vitest run",
-		"format": "biome format",
-		"lint": "biome lint",
-		"check": "biome check",
+		"dev": "vp dev --port 3000",
+		"build": "vp build",
+		"preview": "bun run build && vp preview",
+		"test": "vp test run",
+		"format": "vp fmt",
+		"lint": "vp lint",
+		"check": "vp check",
 		"typecheck": "tsc",
 		"deploy": "bun run build && wrangler deploy",
-		"deploy:preview": "CLOUDFLARE_ENV=preview vite build && wrangler versions upload",
-		"build:ci": "wrangler d1 migrations apply DB --remote && vite build",
-		"build:ci:preview": "wrangler d1 migrations apply DB --remote --env preview && CLOUDFLARE_ENV=preview vite build",
+		"deploy:preview": "CLOUDFLARE_ENV=preview vp build && wrangler versions upload",
+		"build:ci": "wrangler d1 migrations apply DB --remote && vp build",
+		"build:ci:preview": "wrangler d1 migrations apply DB --remote --env preview && CLOUDFLARE_ENV=preview vp build",
 		"db:generate": "drizzle-kit generate",
 		"db:migrate:local": "wrangler d1 migrations apply DB --local",
 		"db:migrate:remote": "wrangler d1 migrations apply DB --remote",
@@ -25,7 +25,8 @@
 		"db:push": "drizzle-kit push",
 		"db:pull": "drizzle-kit pull",
 		"db:studio": "drizzle-kit studio",
-		"cf-typegen": "wrangler types"
+		"cf-typegen": "wrangler types",
+		"prepare": "vp config"
 	},
 	"dependencies": {
 		"@cloudflare/vite-plugin": "^1.26.0",
@@ -62,7 +63,6 @@
 		"zod": "^4.3.6"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.8",
 		"@tailwindcss/typography": "^0.5.16",
 		"@tanstack/devtools-vite": "latest",
 		"@testing-library/dom": "^10.4.1",
@@ -75,9 +75,19 @@
 		"jsdom": "^30.0.0",
 		"tsx": "^4.21.0",
 		"typescript": "^7.0.0",
-		"vite": "^8.0.0",
-		"vitest": "^4.1.5",
+		"vite": "npm:@voidzero-dev/vite-plus-core@0.2.8",
+		"vite-plus": "0.2.8",
 		"wrangler": "^4.90.0"
+	},
+	"overrides": {
+		"vite": "npm:@voidzero-dev/vite-plus-core@0.2.8"
+	},
+	"devEngines": {
+		"packageManager": {
+			"name": "bun",
+			"version": "1.4.2",
+			"onFail": "download"
+		}
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [

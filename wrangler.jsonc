@@ -6,15 +6,13 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "todo-app2026",
 	"compatibility_date": "2025-09-02",
-	"compatibility_flags": [
-		"nodejs_compat"
-	],
+	"compatibility_flags": ["nodejs_compat"],
 	"main": "@tanstack/react-start/server-entry",
 	"vars": {
-		"BETTER_AUTH_URL": "https://todo-app2026.niboshi.workers.dev"
+		"BETTER_AUTH_URL": "https://todo-app2026.niboshi.workers.dev",
 	},
 	"observability": {
-		"enabled": true
+		"enabled": true,
 	},
 	"upload_source_maps": true,
 	"preview_urls": true,
@@ -23,37 +21,37 @@
 			"binding": "DB",
 			"database_name": "todo-app2026-db",
 			"database_id": "d34fe9df-9073-4a27-884b-b90195c851bc",
-			"migrations_dir": "drizzle"
-		}
+			"migrations_dir": "drizzle",
+		},
 	],
 	"r2_buckets": [
 		{
 			"binding": "AVATARS",
-			"bucket_name": "avatars-todo-app2026"
-		}
+			"bucket_name": "avatars-todo-app2026",
+		},
 	],
 	"env": {
 		"preview": {
 			"name": "todo-app2026-preview",
 			"vars": {
-				"BETTER_AUTH_URL": "https://todo-app2026-preview.niboshi.workers.dev"
+				"BETTER_AUTH_URL": "https://todo-app2026-preview.niboshi.workers.dev",
 			},
 			"d1_databases": [
 				{
 					"binding": "DB",
 					"database_name": "todo-app2026-preview-db",
 					"database_id": "8163d76b-1c2e-48ce-b98b-b72d71191b6c",
-					"migrations_dir": "drizzle"
-				}
+					"migrations_dir": "drizzle",
+				},
 			],
 			"r2_buckets": [
 				{
 					"binding": "AVATARS",
-					"bucket_name": "avatars-todo-app2026-preview"
-				}
-			]
-		}
-	}
+					"bucket_name": "avatars-todo-app2026-preview",
+				},
+			],
+		},
+	},
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement

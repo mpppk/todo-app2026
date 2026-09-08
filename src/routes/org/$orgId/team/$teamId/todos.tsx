@@ -110,7 +110,7 @@ function TodosPage() {
 				},
 			}),
 		onSuccess: () => {
-			refetch();
+			void refetch();
 			setTitle("");
 			setDescription("");
 			setAssigneeId("");
