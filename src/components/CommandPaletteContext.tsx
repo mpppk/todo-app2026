@@ -91,6 +91,6 @@ export function useCommandPaletteCommands(
 	deps: React.DependencyList,
 ) {
 	const { registerCommands } = useCommandPalette();
-	// biome-ignore lint/correctness/useExhaustiveDependencies: caller-provided deps intentionally drive re-registration in place of the freshly-built commands array.
+	// Caller-provided deps intentionally drive re-registration in place of the freshly-built commands array.
 	useEffect(() => registerCommands(commands), [registerCommands, ...deps]);
 }

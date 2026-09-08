@@ -68,7 +68,7 @@ function OrgPage() {
 	const { mutate: handleCreateTeam, isPending: creatingTeam } = useMutation({
 		mutationFn: () => createTeam({ data: { orgId, name: teamName } }),
 		onSuccess: () => {
-			refetchTeams();
+			void refetchTeams();
 			setTeamName("");
 		},
 	});
@@ -77,7 +77,7 @@ function OrgPage() {
 		mutationFn: () =>
 			inviteMember({ data: { orgId, email: inviteEmail, role: inviteRole } }),
 		onSuccess: (data) => {
-			refetchMembers();
+			void refetchMembers();
 			setInviteEmail("");
 			if (data?.id) {
 				setInviteLink(
@@ -219,7 +219,7 @@ function OrgPage() {
 											size="sm"
 											variant="outline"
 											onClick={() => {
-												navigator.clipboard.writeText(inviteLink);
+												void navigator.clipboard.writeText(inviteLink);
 												setCopied(true);
 												setTimeout(() => setCopied(false), 2000);
 											}}

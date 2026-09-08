@@ -1,5 +1,5 @@
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vitest/config";
+import { defineConfig } from "vite-plus";
 
 // Vitest uses its own config instead of the app's vite.config.ts so it does not
 // load the Cloudflare / TanStack Start plugins. Those plugins configure a Worker

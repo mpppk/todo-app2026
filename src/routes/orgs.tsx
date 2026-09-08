@@ -36,7 +36,7 @@ function OrgsPage() {
 	const { mutate: handleCreate, isPending } = useMutation({
 		mutationFn: () => createOrg({ data: { name, slug } }),
 		onSuccess: () => {
-			refetch();
+			void refetch();
 			setName("");
 			setSlug("");
 		},

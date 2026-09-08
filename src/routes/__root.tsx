@@ -98,7 +98,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 					content="#09090b"
 					media="(prefers-color-scheme: dark)"
 				/>
-				{/* biome-ignore lint/security/noDangerouslySetInnerHtml: Static theme bootstrap script must run before hydration. */}
+				{/* Static theme bootstrap script must run before hydration. */}
 				<script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
 				<HeadContent />
 			</head>

@@ -59,7 +59,7 @@ function ConsentPage() {
 			} else {
 				window.close();
 			}
-		} catch (_e) {
+		} catch {
 			setError("An unexpected error occurred");
 		} finally {
 			setSubmitting(null);
