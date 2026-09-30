@@ -1,17 +1,17 @@
 import { env } from "cloudflare:workers";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import type { CallToolResult } from "@modelcontextprotocol/sdk/types.js";
-import * as orgService from "#/lib/services/org-service";
-import * as todoService from "#/lib/services/todo-service";
-import * as userService from "#/lib/services/user-service";
-import { buildTodosUiResource, TODOS_RESOURCE_URI } from "./apps";
+import * as orgService from "#/server/services/org-service";
+import * as todoService from "#/server/services/todo-service";
+import * as userService from "#/server/services/user-service";
+import { buildTodosUiResource, TODOS_RESOURCE_URI } from "#/lib/mcp/apps";
 import {
 	createTodoInput,
 	deleteTodoInput,
 	listTeamsInput,
 	listTodosInput,
 	updateTodoInput,
-} from "./schemas";
+} from "#/lib/mcp/schemas";
 
 // Serialize a result as both structured content and a text mirror; MCP clients
 // without structured-content support read the text form.

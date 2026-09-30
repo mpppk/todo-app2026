@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { oAuthDiscoveryMetadata } from "better-auth/plugins";
-import { auth } from "#/lib/auth";
+import { auth } from "#/server/better-auth";
 
 // RFC 8414 discovery. MCP clients resolve the authorization server from the
 // origin, so this must live at the site root (outside the /api/auth basePath).

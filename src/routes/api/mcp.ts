@@ -1,8 +1,8 @@
 import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js";
 import { createFileRoute } from "@tanstack/react-router";
 import { withMcpAuth } from "better-auth/plugins";
-import { auth } from "#/lib/auth";
-import { buildMcpServer } from "#/lib/mcp/server";
+import { auth } from "#/server/better-auth";
+import { buildMcpServer } from "#/server/mcp/server";
 
 // Stateless Streamable HTTP MCP endpoint. withMcpAuth resolves the OAuth
 // bearer token to a session (401 + WWW-Authenticate when absent), and each

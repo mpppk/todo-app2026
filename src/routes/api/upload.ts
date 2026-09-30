@@ -1,6 +1,6 @@
 import { env } from "cloudflare:workers";
 import { createFileRoute } from "@tanstack/react-router";
-import { auth } from "#/lib/auth";
+import { auth } from "#/server/better-auth";
 
 const ALLOWED_TYPES = new Set([
 	"image/jpeg",

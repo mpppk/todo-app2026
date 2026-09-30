@@ -1,6 +1,6 @@
 import { env } from "cloudflare:workers";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { buildTodosAppHtml, TODOS_RESOURCE_URI } from "./apps";
+import { buildTodosAppHtml, TODOS_RESOURCE_URI } from "#/lib/mcp/apps";
 import { registerReadTools, registerWriteTools } from "./tools";
 
 // Build a per-request MCP server bound to the authenticated user. The SDK

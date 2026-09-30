@@ -3,8 +3,8 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { Checkbox } from "#/components/ui/checkbox";
 import { Label } from "#/components/ui/label";
-import { assertTeamAccess } from "#/lib/services/access";
-import * as todoService from "#/lib/services/todo-service";
+import { assertTeamAccess } from "#/server/services/access";
+import * as todoService from "#/server/services/todo-service";
 import { getSession } from "#/server/auth";
 import { authMiddleware } from "#/server/middleware";
 

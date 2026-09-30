@@ -1,7 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { getRequest } from "@tanstack/react-start/server";
 import { z } from "zod";
-import { auth } from "#/lib/auth";
+import { auth } from "#/server/better-auth";
 import { authMiddleware } from "#/server/middleware";
 
 export const listOrgs = createServerFn({ method: "GET" })
