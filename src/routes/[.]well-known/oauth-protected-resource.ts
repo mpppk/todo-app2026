@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { oAuthProtectedResourceMetadata } from "better-auth/plugins";
-import { auth } from "#/lib/auth";
+import { auth } from "#/server/better-auth";
 
 // RFC 9728 protected resource metadata, referenced by the 401
 // WWW-Authenticate header returned from /api/mcp.

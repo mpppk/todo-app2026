@@ -1,9 +1,9 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import * as todoService from "#/lib/services/todo-service";
+import * as todoService from "#/server/services/todo-service";
 import { authMiddleware } from "#/server/middleware";
 
-// Thin wrappers over the shared todo service (src/lib/services/todo-service.ts).
+// Thin wrappers over the shared todo service (src/server/services/todo-service.ts).
 // The service is keyed on the acting userId and enforces the permission model
 // (read = org member, write = org admin/owner), so it is shared with the MCP
 // tools. orgId is accepted for backwards compatibility with the UI callers but
